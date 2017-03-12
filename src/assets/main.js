@@ -14,7 +14,7 @@ var $badges = $('#badges');
 
   courses.forEach(function(course)  {
 
-console.log(course);
+//console.log(course);
 
 var $course = $('<div />', {
       'class': 'course'
@@ -22,11 +22,20 @@ var $course = $('<div />', {
 
       $('<h3 />', {
         text: course.title
-      }).appendTo($course);
+    }).appendTo($course);
 
-      $('<img />', {
+      $('<img></img>', {
       src: course.badge
-  })appendTo($course);
+   }).appendTo($course)
+
+
+
+      $('<a />', {
+    'class': 'btn btn-primary',
+    target: '_blank',
+    href: course.url,
+    text: 'See Course'
+  }).appendTo($course);
 
   })
 }
